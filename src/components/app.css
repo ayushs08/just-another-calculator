@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700");
+body, html {
+  margin: 0;
+  height: 100%;
+  font-size: 10px;
+  font-family: "Rajdhani"; }
+
+* {
+  box-sizing: border-box; }
+
+.calculator {
+  width: 100%;
+  height: 100vh;
+  background: #1c1e24; }
+
+.display {
+  min-height: 10rem;
+  height: 20%;
+  max-width: 100%;
+  background: #1c1e24;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: gray;
+  padding: 0 1rem;
+  font-size: 7rem;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+.controls {
+  height: 80%;
+  max-height: calc(100% - 10rem);
+  display: flex;
+  justify-content: space-between; }
+
+.controls__num {
+  height: 100%;
+  width: 80%;
+  max-width: calc(100% - 8rem);
+  display: grid;
+  grid-gap: 0.2rem;
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr); }
+
+.controls__num__item {
+  background: #252830;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  color: gray;
+  font-weight: 200;
+  cursor: pointer;
+  transition: all 0.4s; }
+
+.controls__num__item:hover {
+  background: #1e2127; }
+
+.controls__num__item:active {
+  background: #1c1e24;
+  box-shadow: inset 0px 0px 20px 1px rgba(0, 0, 0, 0.2);
+  font-size: 3.5rem; }
+
+.controls__op {
+  height: 100%;
+  width: 20%;
+  min-width: calc(8rem - 0.2rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+
+.controls__op__item {
+  background: #f36a63;
+  height: calc(20% - 0.15rem); }
