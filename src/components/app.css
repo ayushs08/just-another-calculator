@@ -8,6 +8,9 @@ body, html {
 * {
   box-sizing: border-box; }
 
+a {
+  text-decoration: none; }
+
 .calculator {
   width: 100%;
   height: 100vh;
@@ -31,7 +34,8 @@ body, html {
   height: 80%;
   max-height: calc(100% - 10rem);
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+  font-size: 4rem; }
 
 .controls__num {
   height: 100%;
@@ -43,15 +47,14 @@ body, html {
   grid-template-columns: repeat(3, 1fr); }
 
 .controls__num__item {
-  background: #252830;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 4rem;
-  color: gray;
-  font-weight: 200;
+  background: #252830;
+  transition: all 0.2s;
   cursor: pointer;
-  transition: all 0.4s; }
+  font-weight: 200;
+  color: gray; }
 
 .controls__num__item:hover {
   background: #1e2127; }
@@ -60,6 +63,22 @@ body, html {
   background: #1c1e24;
   box-shadow: inset 0px 0px 20px 1px rgba(0, 0, 0, 0.2);
   font-size: 3.5rem; }
+
+.controls__num__item .fas {
+  font-size: 3rem; }
+
+.controls__num__item:last-child {
+  grid-column: 2 / 4; }
+
+.controls__num__item.not-btn {
+  background: none; }
+
+.controls__num__item.not-btn:hover {
+  background: none; }
+
+.controls__num__item.not-btn:active {
+  background: none;
+  box-shadow: none; }
 
 .controls__op {
   height: 100%;
@@ -70,5 +89,22 @@ body, html {
   justify-content: space-between; }
 
 .controls__op__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: #f36a63;
-  height: calc(20% - 0.15rem); }
+  transition: all 0.2s;
+  cursor: pointer;
+  height: calc(20% - 0.15rem);
+  color: #252830; }
+
+.controls__op__item:hover {
+  background: #f25c55; }
+
+.controls__op__item:active {
+  background: #f25850;
+  box-shadow: inset 0px 0px 20px 1px rgba(0, 0, 0, 0.2);
+  font-size: 3.5rem; }
+
+.controls__op__item .fas {
+  font-size: 2rem; }

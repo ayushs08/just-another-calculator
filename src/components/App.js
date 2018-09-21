@@ -4,39 +4,64 @@ import './app.css';
 import logo from './logo.svg';
 
 class App extends React.Component {
+
+  state = {
+    display: ""
+  }
+
   render() {
-    const numbers = [1,2,3,4,5,6,7,8,9]
+
+    const numbers = [1,2,3,4,5,6,7,8,9,".",0]
+
+    const type = (event) => {
+      this.setState({display: this.state.display+event.target.innerHTML})
+    }
+
+    const backspace = () => {
+      this.setState({display: this.state.display.slice(0, this.state.display.length-1)})
+    }
+
+    const clear = () => {
+      this.setState({display: ""})
+    }
+
     return (
       <div className="calculator">
         <div className="display">
-          2069
+          {this.state.display}
         </div>
         <div className="controls">
           <div className="controls__num">
-          <div className="controls__num__item">
-            <img src={logo} alt="just another calculator logo" width={60}/>
-          </div>
-          <div className="controls__num__item">C</div>
-          <div className="controls__num__item">
-            <i className="fal fa-code"></i>
-          </div>
+            <a href="https://github.com/ayushs08/just-another-calculator.git" target="_blank" rel="noopener noreferrer" className="controls__num__item not-btn">
+              <img src={logo} alt="just another calculator logo" width={60}/>
+            </a>
+            <div className="controls__num__item" onClick={clear}><strong>C</strong></div>
+            <div className="controls__num__item" onClick={backspace}>
+              <i className="fas fa-backspace"></i>
+            </div>
             {
               numbers.map(num => (
-                <div className="controls__num__item" key={num}>{num}</div>
+                <div className="controls__num__item" key={num} onClick={event => type(event)}>{num}</div>
               ))
             }
-            <div className="controls__num__item">.</div>
-            <div className="controls__num__item">0</div>
-            <div className="controls__num__item">
-              <i class="fal fa-arrow-circle-left"></i>
-            </div>
           </div>
           <div className="controls__op">
-            <div className="controls__op__item"></div>
-            <div className="controls__op__item"></div>
-            <div className="controls__op__item"></div>
-            <div className="controls__op__item"></div>
-            <div className="controls__op__item"></div>
+            <div className="controls__op__item">
+              <i className="fas fa-plus"></i>
+            </div>
+            <div className="controls__op__item">
+              <i className="fas fa-minus"></i>
+            </div>
+            <div className="controls__op__item">
+              <i className="fas fa-divide"></i>
+            </div>
+            <div className="controls__op__item">
+              <i className="fas fa-asterisk"></i>
+            </div>
+            <div className="controls__op__item">
+              <i className="fas fa-equals"></i>
+            </div>
+            
           </div>
         </div>
       </div>
