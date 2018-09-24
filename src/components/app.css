@@ -96,7 +96,8 @@ a {
   transition: all 0.2s;
   cursor: pointer;
   height: calc(20% - 0.15rem);
-  color: #252830; }
+  color: #252830;
+  font-weight: 500; }
 
 .controls__op__item:hover {
   background: #f25c55; }
@@ -105,6 +106,3 @@ a {
   background: #f25850;
   box-shadow: inset 0px 0px 20px 1px rgba(0, 0, 0, 0.2);
   font-size: 3.5rem; }
-
-.controls__op__item .fas {
-  font-size: 2rem; }

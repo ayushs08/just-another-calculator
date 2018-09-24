@@ -13,8 +13,10 @@ class App extends React.Component {
 
     const numbers = [1,2,3,4,5,6,7,8,9,".",0]
 
+    const ops = ["+", "-", "/", "*"]
+
     const type = (event) => {
-      this.setState({display: this.state.display+event.target.innerHTML})
+      this.setState({display: this.state.display + event.target.innerHTML})
     }
 
     const backspace = () => {
@@ -23,6 +25,10 @@ class App extends React.Component {
 
     const clear = () => {
       this.setState({display: ""})
+    }
+
+    const result = () => {
+      alert(eval(this.state.display).toLocaleString())
     }
 
     return (
@@ -46,22 +52,12 @@ class App extends React.Component {
             }
           </div>
           <div className="controls__op">
-            <div className="controls__op__item">
-              <i className="fas fa-plus"></i>
-            </div>
-            <div className="controls__op__item">
-              <i className="fas fa-minus"></i>
-            </div>
-            <div className="controls__op__item">
-              <i className="fas fa-divide"></i>
-            </div>
-            <div className="controls__op__item">
-              <i className="fas fa-asterisk"></i>
-            </div>
-            <div className="controls__op__item">
-              <i className="fas fa-equals"></i>
-            </div>
-            
+            {
+              ops.map(op => (
+                <div className="controls__op__item" key={op} onClick={(event) => type(event)}>{op}</div>
+              ))
+            }
+            <div className="controls__op__item" onClick={result}>=</div>
           </div>
         </div>
       </div>

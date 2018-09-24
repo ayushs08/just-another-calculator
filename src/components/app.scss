@@ -98,9 +98,7 @@ a {
       @include item($primary);
       height: calc(20% - 0.15rem);
       color: $theme;
-      .fas {
-        font-size: 2rem;
-      }
+      font-weight: 500;
     }
   }
 }
