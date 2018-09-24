@@ -1,6 +1,6 @@
 # just-another-calculator
 
-React based markdown editor built as part of the FreeCodeCamp Frontend Libraries Certification program.
+Just another calculator built as part of the FreeCodeCamp Frontend Libraries Certification program.
 
 ### Demo
 http://ayushs08.github.io/just-another-calculator
